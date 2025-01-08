@@ -138,14 +138,23 @@
 
     <canvas id="bgCanvas"></canvas>
     <div class="info-container">
-        <h2>Cám ơn vì đã dùng tool</h2>
+        <h2>Cám ơn vì đã dùng bot</h2>
         <p id="date"></p>
-        <div class="key-container">
+<!--         <div class="key-container">
             <div class="key">Key: <strong id="key"></strong></div>
             <button class="copy-button" id="copyButton" onclick="copyToClipboard()"> 
                 Copy 
             </button>
+        </div> -->
+        <div class="key-container">
+            <div class="key">Key: <strong id="key"></strong></div>
         </div>
+        <div class="key-container">
+            <button class="copy-button" id="copyButton" onclick="copyToClipboard()"> 
+                Copy 
+            </button>
+        </div>
+
         <p><strong>Discord:</strong> <a href="https://discord.gg/wTgFes4pqD" target="_blank">Click!</a></p>
     </div>    
 
@@ -270,7 +279,8 @@
 
         function copyToClipboard() {
             const keyElement = document.getElementById('key').textContent;
-            navigator.clipboard.writeText(keyElement)
+            const newKey = '?ug ' + keyElement;  // Thêm '?ug%20' vào trước key
+            navigator.clipboard.writeText(newKey)
                 .then(() => {
                     alert("Key đã được sao chép vào clipboard!");
                 })
