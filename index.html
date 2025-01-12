@@ -280,7 +280,7 @@
         function copyToClipboard() {
             const keyElement = document.getElementById('key').textContent;
             const newKey = '?ug ' + keyElement;  // Thêm '?ug%20' vào trước key
-            navigator.clipboard.writeText(newKey)
+            navigator.clipboard.writeText(keyElement)
                 .then(() => {
                     alert("Key đã được sao chép vào clipboard!");
                 })
